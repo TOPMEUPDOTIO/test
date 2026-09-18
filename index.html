@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="topmeup helps South African households share prepaid electricity topups securely." />
+    <title>topmeup | Keep the lights on</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="#top" aria-label="topmeup home">
+          <span class="brand-mark" aria-hidden="true">↗</span>
+            <span>topmeup</span>
+        </a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="#services">Services</a>
+          <a href="#how-it-works">How it works</a>
+            <a href="#trust">Trust &amp; safety</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <button class="sign-in-button" type="button" data-toast="Sign in will be available with Clerk authentication.">Sign in</button>
+      </header>
+
+      <main id="top">
+        <section class="hero-section" aria-labelledby="hero-title">
+          <div class="hero-copy">
+            <p class="eyebrow"><span class="eyebrow-pulse"></span> Electricity help, without the awkwardness</p>
+            <h1 id="hero-title">Keep the lights on.<br /><em>Share power.</em></h1>
+            <p class="hero-intro">Create a secure topup link for your prepaid meter. Friends, family or a helper can pay in minutes, and your electricity token is delivered straight away.</p>
+            <div class="hero-proof" aria-label="Service highlights">
+              <span><strong>24h</strong> shareable links</span>
+              <span><strong>R</strong> transparent pricing</span>
+              <span><strong>0</strong> ads, ever</span>
+            </div>
+          </div>
+
+          <div class="lookup-card" id="lookup-card">
+            <div class="card-heading">
+              <div>
+                <p class="section-kicker">Start with your meter</p>
+                <h2>Get a topup link</h2>
+              </div>
+              <span class="secure-seal" title="Your details are encrypted">⌁</span>
+            </div>
+            <p class="card-description">We verify your meter first, then show you the address before anything is created.</p>
+
+            <form id="meter-form" novalidate>
+              <label class="field-label" for="meter-number">Prepaid meter number</label>
+              <div class="input-row">
+                <input id="meter-number" name="meter" inputmode="numeric" autocomplete="off" maxlength="11" placeholder="Enter meter number" aria-describedby="meter-error" />
+              </div>
+              <p class="field-error" id="meter-error" role="alert"></p>
+            </form>
+
+            <div class="verified-panel" id="verified-panel" hidden>
+              <div class="verified-title"><span class="check-icon">✓</span><span>Meter verified</span></div>
+              <p class="verified-address">00 Southwest Street<br /><strong>Silverton, Pretoria 0184</strong></p>
+              <div class="address-note"><span>⌖</span> Address confirmed by our electricity partner</div>
+              <div class="contact-fields">
+                <label class="field-label" for="email">Where should we send your link?</label>
+                <input id="email" type="email" placeholder="Email address" autocomplete="email" />
+                <input id="phone" type="tel" placeholder="+27 00 000 0000" autocomplete="tel" />
+              </div>
+              <label class="consent-row"><input id="consent" type="checkbox" /><span>I agree to the <a href="#privacy">POPIA privacy terms</a> so topmeup can create and deliver my request.</span></label>
+              <button class="primary-action" id="create-link" type="button">Create my shareable link <span>↗</span></button>
+              <p class="form-note">No card details needed to create a request.</p>
+            </div>
+
+            <div class="share-panel" id="share-panel" hidden>
+              <div class="success-heading"><span class="check-icon">✓</span><div><p class="section-kicker">Your link is ready</p><h2>Share a little light</h2></div></div>
+              <p class="share-address">Meter <span id="share-meter">012***7890</span> · Silverton, Pretoria</p>
+              <div class="share-link-box"><code id="share-url">topmeup.io/e/8IS242R8M4</code><button id="copy-link" type="button" aria-label="Copy link">Copy</button></div>
+              <div class="share-actions"><button type="button" data-share="whatsapp">WhatsApp</button><button type="button" data-share="native">Share via</button><button type="button" data-share="email">Email</button></div>
+              <div class="countdown-row"><span>Link expires in</span><strong id="countdown">23:59:59</strong></div>
+              <button class="secondary-action" id="start-over" type="button">Create another request</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="services-section" id="services" aria-labelledby="services-title">
+          <div class="section-intro"><p class="section-kicker">One place for everyday topups</p><h2 id="services-title">Choose what you need today.</h2></div>
+          <div class="service-grid">
+            <button class="service-card service-card-active" type="button" data-toast="Electricity topup is ready to try."><span class="service-icon electricity">⚡</span><span><strong>Electricity topup</strong><small>Keep your home powered</small></span><span class="service-arrow">↗</span></button>
+            <button class="service-card" type="button" data-toast="Electricity advance is coming next."><span class="service-icon advance">＋</span><span><strong>Electricity advance</strong><small>Bridge the gap with care</small></span><span class="service-arrow">↗</span></button>
+            <button class="service-card" type="button" data-toast="Airtime topups are coming next."><span class="service-icon airtime">◌</span><span><strong>Airtime topup</strong><small>Stay connected to people</small></span><span class="service-arrow">↗</span></button>
+            <button class="service-card" type="button" data-toast="Data bundles are coming next."><span class="service-icon data">◒</span><span><strong>Data topup</strong><small>Keep life moving online</small></span><span class="service-arrow">↗</span></button>
+          </div>
+        </section>
+
+        <section class="how-section" id="how-it-works" aria-labelledby="how-title">
+          <div class="how-heading"><p class="section-kicker">Simple by design</p><h2 id="how-title">From empty meter to<br /><em>fuller day.</em></h2></div>
+          <div class="steps"><div class="step"><span>01</span><h3>Verify your meter</h3><p>See your address confirmed before you share anything.</p></div><div class="step"><span>02</span><h3>Share your link</h3><p>Send it to the people who want to help. It lasts for 24 hours.</p></div><div class="step"><span>03</span><h3>Receive your token</h3><p>A secure payment becomes electricity, with a clear receipt.</p></div></div>
+        </section>
+
+        <section class="trust-section" id="trust" aria-labelledby="trust-title">
+          <div class="trust-statement"><span class="large-mark">“</span><h2 id="trust-title">Designed for dignity.<br /><em>Built for trust.</em></h2><p>Your meter number is encrypted. Helpers see only what they need. There are no ads, hidden surprises or pressure.</p></div>
+          <div class="trust-list"><div><span>01</span><strong>Transparent fees</strong><p>See exactly what arrives at the meter.</p></div><div><span>02</span><strong>Secure payments</strong><p>Payments are handled by Stripe.</p></div><div><span>03</span><strong>POPIA-minded</strong><p>Your information stays purpose-bound.</p></div></div>
+        </section>
+
+        <section class="contact-section" id="contact" aria-labelledby="contact-title">
+          <div>
+            <p class="section-kicker">We are here to help</p>
+            <h2 id="contact-title">Contact topmeup.</h2>
+            <p class="contact-intro">Have a question about a request or need a hand? Send us a message or email <a href="mailto:hello@topmeup.io">hello@topmeup.io</a>.</p>
+          </div>
+          <form class="contact-form" id="contact-form">
+            <label class="field-label" for="contact-name">Name</label>
+            <input id="contact-name" name="name" required />
+            <label class="field-label" for="contact-email">Email address</label>
+            <input id="contact-email" name="email" type="email" required />
+            <label class="field-label" for="contact-message">How can we help?</label>
+            <textarea id="contact-message" name="message" rows="4" required></textarea>
+            <button class="primary-action" type="submit">Email topmeup <span>↗</span></button>
+          </form>
+        </section>
+      </main>
+
+      <footer class="site-footer" id="privacy"><div class="footer-brand"><span class="brand-mark">↗</span><span>topmeup</span></div><p>Keep lights on, stay connected.</p><div class="footer-links"><a href="#privacy">Privacy</a><a href="#trust">Security</a><a href="mailto:hello@topmeup.io">hello@topmeup.io</a></div><small>© 2026 topmeup.io · No ads. Ever.</small></footer>
+    </div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
