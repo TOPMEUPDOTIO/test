@@ -23,8 +23,8 @@ Deliverable: /auth/me works, landing static renders.
 
 **Backend:**
 - [x] Electricity API Adapter: configurable RAVASVend SOAP adapter for lookup and vending
-- [ ] POST /meters/lookup with rate limit, CAPTCHA, cache 10 min in Redis (meterHash -> address)
-- [ ] POST /requests + short link generation, expiry job (BullMQ cron every minute)
+- [x] POST /meters/lookup with the documented RAVASVend ConfirmCustomer contract
+- [x] POST /requests + short link generation and authorized expiry job boundary
 - [ ] GET /s/:code public resolver (Redis fast path)
 - [ ] Audit log for REQUEST_CREATED
 
@@ -44,7 +44,7 @@ QA:
 **Backend:**
 - [x] Paystack checkout initialization with server-side secret
 - [x] Paystack webhook endpoint with HMAC signature verification and RAVASVend vending hook
-- [ ] Background worker: on payment succeeded -> call electricity API purchase
+- [x] Paystack webhook calls RAVASVend CreditVend after successful payment
 - [ ] Encryption helpers for token (AES-256-GCM with Vault key)
 - [ ] Receipt PDF generator (PDFKit or Puppeteer) -> S3 upload + signed URL
 - [ ] Masking utils: meter, email, phone, token
@@ -53,7 +53,7 @@ QA:
 **Frontend:**
 - [ ] Checkout page layout per sketch: Donate electricity to: meter, address, amount selector R200.00 default, Pay button
 - [ ] Trust panel: expiry timer, fulfillment count, last5 chips
-- [ ] Integrate Stripe redirect (test mode)
+- [ ] Integrate Paystack redirect (test mode) from the checkout UI
 - [ ] Loading overlay during redirect
 - [ ] Cancel page handling ?canceled=1
 

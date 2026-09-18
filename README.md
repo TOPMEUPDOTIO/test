@@ -24,6 +24,8 @@ Open [index.html](index.html) in a browser. No build step or environment variabl
 - Paystack initialization and signed webhook endpoints
 - RAVASVend SOAP meter lookup and vending adapter
 - Authorized expiry-job endpoint
+- Optional Resend email and WhatsApp Cloud API receipt adapters
+- Vercel cron declaration for the expiry job
 
 ## Implementation plan status
 
@@ -31,7 +33,7 @@ Open [index.html](index.html) in a browser. No build step or environment variabl
 - Complete: server-owned request creation through `/api/requests`
 - Complete: About, Legal, and social navigation routes
 - Complete: authentication, Paystack checkout boundary, RAVASVend adapter, durable local persistence, and expiry-job boundary
-- Pending: confirm the exact RAVASVend operation/namespace fields from the vendor PDF and configure production credentials
-- Pending: deploy a shared database/worker, configure WhatsApp/email providers, and run production UAT
+- Verified: RAVASVend `ConfirmCustomer` succeeds with test meters `11112222333` and `11112223117`, returning voucher code `TEST_VCPERC`; `CreditVend` reaches the service but the supplied test account currently returns insufficient aggregator funds
+- Pending: deploy Postgres instead of the local JSON fallback, provision a worker/cron secret, configure Resend/WhatsApp production credentials, and run production UAT
 
-The provider adapters are environment-backed. The RAVASVend specification PDF was not available in the repository, so operation names default to `MeterLookup` and `Vend` and can be overridden with environment variables. The JSON store is a deployment-safe local fallback, not a replacement for Postgres in a multi-instance deployment.
+The provider adapters are environment-backed. The RAVASVend specification documents namespace `http://ravasvend.co.za/`, `ConfirmCustomer`, and `CreditVend`; the adapter uses that contract. Documented electricity test meters include `11112222333` (successful confirmation), `11112223117` (successful CreditVend), and `11112223208` (CreditVend with fixed charges, debt, and FBE). Test credentials belong in ignored `.env.local`; `.env.example` contains placeholders only. The JSON store is a local fallback, not a replacement for Postgres in a multi-instance deployment.
