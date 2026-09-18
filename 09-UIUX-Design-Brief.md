@@ -1,8 +1,8 @@
-# 09 - UI/UX Design Brief - topmeup.me
+# 09 - UI/UX Design Brief - topmeup.io
 
 ## Brand Essence
 
-**Name:** topmeup.me - playful, empathetic, action-oriented. "Top up me" = top up my electricity.
+**Name:** topmeup.io - playful, empathetic, action-oriented. "Top up me" = top up my electricity.
 
 **Personality:** Warm, trustworthy, dignified, South African rooted, simple. Not charity-pity but community solidarity — "Ubuntu".
 
@@ -41,7 +41,7 @@ Avoid: harsh reds for primary, pure black.
 
 **Global Shell (all pages):**
 ```
-[Header 64px: Logo "topmeup.me" left, Nav About | Services | Contact Us + [Sign In] button right]
+[Header 64px: Logo "topmeup.io" left, Nav About | Services | Contact Us + [Sign In] button right]
 [Top Ad Banner 90px height, max-width 728, centered, labeled Ad - matches "Ads" block in sketches top]
 [Main Center Card 640px max, white, shadow, 24px padding, rounded 16px]
 [Bottom Ad Banner]
@@ -71,7 +71,7 @@ On Desktop >1200px: Left + Right sticky Ad Rails (300x600) as per Side Ads in so
 ### 3. Share Page (Sketch 4 equivalent)
 - Success check
 - Fields: meter + address + email + phone stacked (readonly)
-- Short URL box: `topmeup.me/8IS242R8M41` large mono, with [Copy] button (outlined)
+- Short URL box: `topmeup.io/8IS242R8M41` large mono, with [Copy] button (outlined)
 - Share row: labeled "Share" + 5 icons: WhatsApp (green), Facebook (blue), X (black), Telegram, SMS (or generic link) - exactly as drawn with circle X placeholders -> implement proper icons
 - Countdown pill: "Expires in 23:42:10"
 - CTA: Go to Dashboard
@@ -130,7 +130,7 @@ On Desktop >1200px: Left + Right sticky Ad Rails (300x600) as per Side Ads in so
 
 ## Ads UX
 
-- Label clearly "Ad • Supports keeping topmeup.me free"
+- Label clearly "Ad • Supports keeping topmeup.io free"
 - Slots: top leaderboard 728x90 desktop / 320x100 mobile, bottom same, sidebar 300x600
 - Close button? Not dismissible but not blocking content
 - Loading skeleton for ad so CLS minimal
@@ -138,7 +138,7 @@ On Desktop >1200px: Left + Right sticky Ad Rails (300x600) as per Side Ads in so
 
 ## Assets Needed
 
-- Logo: simple, wordmark topmeup.me with light bulb dot on i or top up arrow
+- Logo: simple, wordmark topmeup.io with light bulb dot on i or top up arrow
 - Illustrations: empty state house with light off -> on, hands sharing light
 - Icons: Line icons (Lucide)
 - Lottie: success confetti, light bulb on

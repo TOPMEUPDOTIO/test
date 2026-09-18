@@ -1,4 +1,4 @@
-# 02 - Architecture - topmeup.me
+# 02 - Architecture - topmeup.io
 
 ## High-Level Architecture
 

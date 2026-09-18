@@ -1,4 +1,4 @@
-# 08 - TRD - Technical Requirements Document - topmeup.me
+# 08 - TRD - Technical Requirements Document - topmeup.io
 
 ## 1. System Overview
 Platform connects Electricity Vendor API + Stripe to deliver prepaid tokens.

@@ -1,4 +1,4 @@
-# 05 - Features - topmeup.me
+# 05 - Features - topmeup.io
 
 ## Feature Breakdown by Epic
 
@@ -33,7 +33,7 @@
 
 **F2.1 Short URL Generation**
 - 10-char Base58 code, example `8IS242R8M41` or `81524ZR8M41` (from sketches)
-- URL pattern: `topmeup.me/{code}` (branded short domain)
+- URL pattern: `topmeup.io/{code}` (branded short domain)
 - QR Code generation for sharing print.
 - TTL: 24 hours from creation, live countdown timer (HH:MM:SS) as required.
 
@@ -90,7 +90,7 @@
 - Ad slots top/bottom (non-intrusive, per sketch)
 
 **F4.3 Receipt**
-- PDF includes: topmeup.me logo, date, receipt no, meter masked, token (or instructions to view token), units, amount paid inclusive of fees, Stripe receipt ID, support contact.
+- PDF includes: topmeup.io logo, date, receipt no, meter masked, token (or instructions to view token), units, amount paid inclusive of fees, Stripe receipt ID, support contact.
 
 ### Epic 5: Dashboards
 

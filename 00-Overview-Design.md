@@ -1,4 +1,4 @@
-# topmeup.me - Master Design Document
+# topmeup.io - Master Design Document
 
 **Version:** 1.0  
 **Date:** 2026-07-10  
@@ -6,13 +6,13 @@
 **Location Context:** South Africa (POPIA, ZAR, Prepaid Meters)
 
 ## Concept in One Sentence
-topmeup.me lets anyone who ran out of prepaid electricity create a secure, shareable donation link (24h short URL) for their meter, which friends, family or strangers can pay via Stripe to instantly generate a 20-digit prepaid token.
+topmeup.io lets anyone who ran out of prepaid electricity create a secure, shareable donation link (24h short URL) for their meter, which friends, family or strangers can pay via Stripe to instantly generate a 20-digit prepaid token.
 
 ## Interpretation of Hand Drawings
 From 6 wireframe pages analyzed:
 
 **Page Type 1 - Landing / Meter Lookup**
-- Layout: topmeup.me header (top right), About / Services / Contact Us nav, two Ad slots (top + bottom), center card: "Ask for electricity donations via social media" + [Enter meter number ->]
+- Layout: topmeup.io header (top right), About / Services / Contact Us nav, two Ad slots (top + bottom), center card: "Ask for electricity donations via social media" + [Enter meter number ->]
 - Function: Anonymous meter validation entry point.
 
 **Page Type 2 - Validation + Contact Capture**
@@ -20,7 +20,7 @@ From 6 wireframe pages analyzed:
 - Function: After Electricity API lookup returns address, capture requestor identity. Gate to Auth.
 
 **Page Type 3 - Share Link Generated**
-- Center shows: meter, address, email `South.west@gmail.com`, phone `+27 00 000 0000`, short URL `topmeup.me/8IS242R8M41`, [Copy], [Share x5 icons]
+- Center shows: meter, address, email `South.west@gmail.com`, phone `+27 00 000 0000`, short URL `topmeup.io/8IS242R8M41`, [Copy], [Share x5 icons]
 - Function: After sign-in/up + request creation, show campaign link.
 
 **Page Type 4 - Checkout / Donate**
@@ -46,7 +46,7 @@ From 6 wireframe pages analyzed:
 ## Key Business Rules
 - Meter must be validated before any account action.
 - User must be authenticated (Sign-Up / Sign-In) to create a request link.
-- Short code: 10-char base58 (e.g., 8IS242R8M41), unique, URL: topmeup.me/{code}, TTL 24h, extendable? Auto-expire.
+- Short code: 10-char base58 (e.g., 8IS242R8M41), unique, URL: topmeup.io/{code}, TTL 24h, extendable? Auto-expire.
 - Checkout page shows: requestor display name (masked email/phone), expiry timer, fulfill count, last 5 fulfill amounts.
 - Donor chooses amount (discrete chips R50/100/200/500 + custom), Stripe Checkout.
 - On `payment_intent.succeeded` webhook, generate token via Electricity API. Never generate before payment.

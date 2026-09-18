@@ -1,4 +1,4 @@
-# 11 - App Flow Diagram - topmeup.me
+# 11 - App Flow Diagram - topmeup.io
 
 ## Textual Flow Summary
 
@@ -6,7 +6,7 @@ Below is visual diagram code in Mermaid. Render using https://mermaid.live or in
 
 ```mermaid
 flowchart TD
-    A[User lands on topmeup.me\nEnter meter number UI\nAds top/bottom] --> B{Lookup Meter\nElectricity API}
+    A[User lands on topmeup.io\nEnter meter number UI\nAds top/bottom] --> B{Lookup Meter\nElectricity API}
     B -->|Invalid| B1[Show error\nRate limit + CAPTCHA]
     B1 --> A
     B -->|Valid| C[Show Address\n00 Southwest st Silverton 0184\nEmail + Mobile inputs\nSubmit]
@@ -134,7 +134,7 @@ sequenceDiagram
 - Sketch page with Ads top/bottom = shell with AdSlot components
 - Center card with "Enter meter number ->" = LandingMeterCard component
 - Card showing meter + address + email/phone + Submit = ValidatedMeterCard
-- Card showing topmeup.me/xxx + Copy + Share icons = ShareCampaignCard
+- Card showing topmeup.io/xxx + Copy + Share icons = ShareCampaignCard
 - Checkout showing donate electricity to + meter + amount R200 + Pay = CheckoutDonationCard
 - Transaction Successful with token 2874-4079-... + Copy + Share = SuccessTokenCard
 - Combined view in last sketch = responsive stacking of checkout + success in storybook.

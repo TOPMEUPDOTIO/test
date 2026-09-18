@@ -1,8 +1,8 @@
-# 07 - PRD - Product Requirements Document - topmeup.me
+# 07 - PRD - Product Requirements Document - topmeup.io
 
 ## 1. Executive Summary
 
-topmeup.me is a South Africa-focused electricity donation platform enabling anyone with a prepaid meter to request help via a shareable 24-hour link, and anyone globally to pay for their electricity via secure Stripe payments that instantly deliver a 20-digit prepaid token.
+topmeup.io is a South Africa-focused electricity donation platform enabling anyone with a prepaid meter to request help via a shareable 24-hour link, and anyone globally to pay for their electricity via secure Stripe payments that instantly deliver a 20-digit prepaid token.
 
 **Problem:** Energy poverty - millions run out of prepaid electricity, no easy way to ask for help dignity-preservingly.
 **Solution:** Frictionless meter lookup -> authenticated request -> viral short link -> checkout -> instant token.
@@ -43,7 +43,7 @@ topmeup.me is a South Africa-focused electricity donation platform enabling anyo
 
 - As Thandi, I enter my meter number, see my address confirmed so I trust system validated me.
 - As Thandi, I provide email/mobile and sign up quickly, so my link is tied to me and I can track.
-- As Thandi, I get a short link topmeup.me/XXX that lasts 24h, copy + share via WhatsApp 5 icons, so I can spread fast.
+- As Thandi, I get a short link topmeup.io/XXX that lasts 24h, copy + share via WhatsApp 5 icons, so I can spread fast.
 - As Jason, clicking link I see meter masked, area, who requested (masked), expiry countdown, how many times others helped and last 5 amounts, so I trust it's real.
 - As Jason, I choose R50/R100/R200/R500 and pay securely via Stripe, so I feel safe (no card stored on unknown site).
 - As Jason, after payment I instantly see token number 2874-4079-3286-8241, units, amount, Copy + receipt, so I can send token to Thandi or system sends automatically.
@@ -110,7 +110,7 @@ topmeup.me is a South Africa-focused electricity donation platform enabling anyo
 
 - Electricity API sandbox exists and can lookup + generate tokens for test meters.
 - Stripe available in ZAR, South African business verification possible.
-- Short domain topmeup.me owned + configured.
+- Short domain topmeup.io owned + configured.
 - Africa's Talking or Twilio for SMS if needed.
 
 ## 9. Out of Scope MVP

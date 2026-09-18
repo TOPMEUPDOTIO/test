@@ -1,4 +1,4 @@
-# topmeup.me — Complete Design Specification
+# topmeup.io — Complete Design Specification
 
 > This is the consolidated master doc linking all 11 required deliverables. Derived from 7 hand-drawn wireframes + requirements.
 
@@ -25,16 +25,16 @@ Open `diagrams/app-flow-interactive.html` in preview for visual Mermaid diagrams
 
 - **Input:** `Enter meter number ->` (arrow) — Landing CTA
 - **Validation:** shows `0123456789 X` + `00 Southwest street Silverton Pretoria 0184` + `Enter email address` + `Enter mobile number` + `Submit` — Post lookup owner capture
-- **Share:** `topmeup.me/8IS242R8M41` or `/81524ZR8M41` + `Copy` + `Share ⊗ ⊗ ⊗ ⊗ ⊗` — 24h Temporary Short URL Page
+- **Share:** `topmeup.io/8IS242R8M41` or `/81524ZR8M41` + `Copy` + `Share ⊗ ⊗ ⊗ ⊗ ⊗` — 24h Temporary Short URL Page
 - **Checkout:** `Donate electricity to: meter number 0123456789, 00 Southwest street... South.west@gmail.com +27 00 000 0000 + Amount R200.00 Pay` — Public Donor Page via short URL showing requestor info, expiry, fulfillment history
 - **Success:** `Your prepaid electricity donation for meter number 0123456789 was successful. The token number is: 2874-4079-3286-8241 number of units: 98.00 Token amount: R200.00` — Receipt page with Copy + Share
-- **Global:** `topmeup.me` logo/header, nav `About Services Contact Us Checkout Transaction Successful`, `Ads` top/bottom/sidebar placeholders.
+- **Global:** `topmeup.io` logo/header, nav `About Services Contact Us Checkout Transaction Successful`, `Ads` top/bottom/sidebar placeholders.
 
 ## Core User Journey (Happy Path)
 
 1. Anonymous lands → enters meter → electricity API lookup → address shown
 2. Enters email/mobile → forced Sign Up / Sign In (POPIA consent)
-3. Backend creates Request + ShortLink `topmeup.me/{10char}` expires 24h → Share page with Copy + WhatsApp etc
+3. Backend creates Request + ShortLink `topmeup.io/{10char}` expires 24h → Share page with Copy + WhatsApp etc
 4. Donor clicks link → checkout shows masked meter, address, requestor masked, countdown, fulfillment count, last 5 amounts, amount selector, Pay
 5. Stripe secure checkout → webhook → electricity API generates 20-digit token → fulfillment stored encrypted → receipt PDF
 6. Success page shows token groups 2874-4079-3286-8241, units, amount → donor can copy, requestor notified via email/SMS

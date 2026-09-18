@@ -23,7 +23,7 @@ export default function LegalPage() {
       <section className="content-hero" aria-labelledby="legal-title">
         <p className="eyebrow"><span className="eyebrow-pulse"></span> Your trust matters</p>
         <h1 id="legal-title">Legal</h1>
-        <p className="content-lede">The policies and terms that guide how TopMeUp works.</p>
+        <p className="content-lede">The policies and terms that guide how topmeup works.</p>
       </section>
 
       <div className="legal-document">
@@ -32,7 +32,7 @@ export default function LegalPage() {
           <h2>Privacy Policy</h2>
           <p className="legal-date">Last updated: 9/18/2026</p>
           <h3>Introduction</h3>
-          <p>At TopMeUp, we take your privacy seriously. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our service.</p>
+          <p>At topmeup, we take your privacy seriously. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our service.</p>
           <h3>Information We Collect</h3>
           <p>We collect information that you provide directly to us, including:</p>
           <ul><li>Meter numbers</li><li>Email addresses</li><li>Mobile numbers</li><li>Transaction data</li></ul>
@@ -48,9 +48,9 @@ export default function LegalPage() {
           <h2>Terms of Service</h2>
           <p className="legal-date">Last updated: 9/18/2026</p>
           <h3>1. Acceptance of Terms</h3>
-          <p>By accessing and using TopMeUp's services, you agree to be bound by these Terms of Service and all applicable laws and regulations.</p>
+          <p>By accessing and using topmeup's services, you agree to be bound by these Terms of Service and all applicable laws and regulations.</p>
           <h3>2. Service Description</h3>
-          <p>TopMeUp provides a platform for users to request and receive top up vouchers through social media. Our service includes identifier verification, request link generation, and voucher delivery.</p>
+          <p>topmeup provides a platform for users to request and receive top up vouchers through social media. Our service includes identifier verification, request link generation, and voucher delivery.</p>
           <h3>3. User Responsibilities</h3>
           <p>You agree to:</p>
           <ul><li>Provide accurate and complete information</li><li>Maintain the security of your account</li><li>Use the service only for lawful purposes</li><li>Not misuse or attempt to manipulate the service</li></ul>
@@ -63,7 +63,7 @@ export default function LegalPage() {
 
       <footer className="content-footer">
         <a className="footer-brand" href="/">topmeup</a>
-        <div className="social-links" aria-label="Follow TopMeUp">
+        <div className="social-links" aria-label="Follow topmeup">
           {socialLinks.map((link) => <a key={link.label} href={link.href} target="_blank" rel="noreferrer">{link.label}</a>)}
         </div>
         <small>© 2026 topmeup.io</small>

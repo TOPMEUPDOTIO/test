@@ -1,10 +1,10 @@
-# 01 - App Flow - topmeup.me
+# 01 - App Flow - topmeup.io
 
 ## Primary Actor Journeys
 
 ### Journey A: Requestor - Create Donation Link (The Needy User)
 ```
-[Anonymous] -> Landing Page (topmeup.me)
+[Anonymous] -> Landing Page (topmeup.io)
   -> Enters Meter Number (11 digits) + Click Arrow
   -> Validation: Call Electricity API /lookup
      -> If invalid: inline error "We couldn't find that meter. Check number"
@@ -25,7 +25,7 @@
      - Log Event REQUEST_CREATED
 
   -> Frontend: Share Page
-     Shows: meter (masked), full address, short URL topmeup.me/{code}
+     Shows: meter (masked), full address, short URL topmeup.io/{code}
      Actions: [Copy], Share via WhatsApp, Facebook, X, Telegram, SMS
      Info: Link expires in 23:59:12 (live countdown)
 
@@ -36,7 +36,7 @@
 
 ### Journey B: Donor - Fulfill via Short Link
 ```
-[External Channel] -> Click topmeup.me/8IS242R8M41
+[External Channel] -> Click topmeup.io/8IS242R8M41
   -> GET /s/{code}
   -> Backend resolves:
      - If expired: Show Expired page + CTA to request new link

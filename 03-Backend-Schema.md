@@ -2,7 +2,7 @@
 
 ## REST API Design
 
-Base URL: `https://api.topmeup.me/v1`
+Base URL: `https://api.topmeup.io/v1`
 
 ### Auth
 ```

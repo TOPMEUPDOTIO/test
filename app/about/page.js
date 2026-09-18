@@ -22,7 +22,7 @@ export default function AboutPage() {
 
       <section className="content-hero" aria-labelledby="about-title">
         <p className="eyebrow"><span className="eyebrow-pulse"></span> Our story</p>
-        <h1 id="about-title">About <em>TopMeUp</em></h1>
+        <h1 id="about-title">About <em>topmeup</em></h1>
         <p className="content-lede">Making it easier to ask for help, lend a hand, and keep people connected when the cost of living gets heavy.</p>
       </section>
 
@@ -30,13 +30,13 @@ export default function AboutPage() {
         <article className="content-section">
           <p className="section-kicker">Why we exist</p>
           <h2>Support should be easier to reach.</h2>
-          <p>In a world where the cost of living continues to rise, TopMeUp is here to make it easier than ever for individuals to reach out for help and for others to lend a hand. We believe that no one should struggle alone, and with the power of social media and technology, we're creating a global community of support.</p>
+          <p>In a world where the cost of living continues to rise, topmeup is here to make it easier than ever for individuals to reach out for help and for others to lend a hand. We believe that no one should struggle alone, and with the power of social media and technology, we're creating a global community of support.</p>
         </article>
 
         <article className="content-section content-section-accent">
           <p className="section-kicker">Our purpose</p>
           <h2>A movement built on generosity.</h2>
-          <p>TopMeUp is more than just a platform—it's a movement inspired by the timeless human spirit of generosity. From initiatives like Gift of the Givers to everyday acts of kindness, we know that people have always found ways to help one another. TopMeUp builds on this legacy by connecting those in need with those who can help, no matter where they are in the world.</p>
+          <p>topmeup is more than just a platform—it's a movement inspired by the timeless human spirit of generosity. From initiatives like Gift of the Givers to everyday acts of kindness, we know that people have always found ways to help one another. topmeup builds on this legacy by connecting those in need with those who can help, no matter where they are in the world.</p>
         </article>
       </div>
 
@@ -45,12 +45,12 @@ export default function AboutPage() {
           <p className="section-kicker">Meet the founder</p>
           <h2 id="founder-title">Mathemba Magwentshu</h2>
         </div>
-        <p>TopMeUp was founded by Mathemba Magwentshu, a visionary who believes in the power of connection, generosity, and technology. His passion for helping others and his commitment to innovation drive everything we do at TopMeUp.</p>
+        <p>topmeup was founded by Mathemba Magwentshu, a visionary who believes in the power of connection, generosity, and technology. His passion for helping others and his commitment to innovation drive everything we do at topmeup.</p>
       </section>
 
       <footer className="content-footer">
         <a className="footer-brand" href="/">topmeup</a>
-        <div className="social-links" aria-label="Follow TopMeUp">
+        <div className="social-links" aria-label="Follow topmeup">
           {socialLinks.map((link) => <a key={link.label} href={link.href} target="_blank" rel="noreferrer">{link.label}</a>)}
         </div>
         <small>© 2026 topmeup.io</small>

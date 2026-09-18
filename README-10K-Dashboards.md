@@ -1,4 +1,4 @@
-# README - $10K Dashboard Blueprint Applied to topmeup.me
+# README - $10K Dashboard Blueprint Applied to topmeup.io
 
 ## What Changed?
 

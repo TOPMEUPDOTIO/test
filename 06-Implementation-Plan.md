@@ -1,4 +1,4 @@
-# 06 - Implementation Plan - topmeup.me
+# 06 - Implementation Plan - topmeup.io
 
 ## Overview
 10-week plan for MVP, team of 3: 1 Frontend, 1 Backend, 1 Product/QA + part-time designer. Assumes Electricity API sandbox available and Stripe test keys.
@@ -102,7 +102,7 @@ Dependencies: Get Stripe approval for ZAR.
 - [ ] Load test: k6 for short link resolution (peak when viral on social)
 - [ ] UAT with real meters (small pilot in Silverton Pretoria area)
 - [ ] Staging deploy to af-south-1 (AWS) with real Electricity API sandbox, Stripe live test with small R amounts
-- [ ] Go-live checklist: DNS topmeup.me, short domain same, SSL wildcard, Cloudflare WAF rules, backups test restore
+- [ ] Go-live checklist: DNS topmeup.io, short domain same, SSL wildcard, Cloudflare WAF rules, backups test restore
 - [ ] Marketing site: About, Services, Contact Us (as nav in sketches), FAQ
 - [ ] Monitoring: UptimeRobot, Grafana dashboards, alerts for Token Failure rate >5%
 - [ ] Launch: Soft launch to 100 users, iterate

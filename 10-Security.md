@@ -1,4 +1,4 @@
-# 10 - Security - POPIA + PCI-DSS + General - topmeup.me
+# 10 - Security - POPIA + PCI-DSS + General - topmeup.io
 
 ## 1. Objective
 Highest form of security for handling personal data (POPIA - Protection of Personal Information Act, South Africa) and payment data (PCI-DSS). Build trust.

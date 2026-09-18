@@ -1,6 +1,12 @@
-import { createRequest, getRequest, listRequests } from '../../../lib/serverStore';
+import { createRequest, getRequest, getRequestByCode, issueToken, listRequests, markPayment } from '../../../lib/serverStore';
 
-export async function GET() {
+export async function GET(request) {
+  const code = new URL(request.url).searchParams.get('code');
+  if (code) {
+    const record = getRequestByCode(code);
+    return record ? Response.json({ request: record }) : Response.json({ error: 'Request not found.' }, { status: 404 });
+  }
+
   return Response.json({ requests: listRequests() });
 }
 

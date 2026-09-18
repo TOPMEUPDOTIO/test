@@ -1,4 +1,4 @@
-# 04 - Database Schema - topmeup.me
+# 04 - Database Schema - topmeup.io
 
 ## ER Diagram (Conceptual)
 

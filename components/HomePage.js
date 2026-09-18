@@ -34,6 +34,13 @@ export default function HomePage() {
   const [countdown, setCountdown] = useState('23:59:59');
   const [toast, setToast] = useState('');
   const [contact, setContact] = useState({ name: '', email: '', message: '' });
+  const [selectedService, setSelectedService] = useState('topup');
+  const serviceTabs = [
+    { id: 'topup', label: 'Topup', icon: '⚡', placeholder: 'Enter meter number' },
+    { id: 'advance', label: 'Advance', icon: '＋', placeholder: 'Enter meter number' },
+    { id: 'airtime', label: 'Airtime', icon: '◌', placeholder: 'Enter mobile number' },
+    { id: 'data', label: 'Data', icon: '◒', placeholder: 'Enter mobile number' },
+  ];
 
   const showToast = (message) => {
     setToast(message);
@@ -183,15 +190,15 @@ export default function HomePage() {
             <a href="/legal">Legal</a>
             <a href="#contact">Contact</a>
           </nav>
-          <button className="sign-in-button" type="button" onClick={() => showToast('Sign in will be available with Clerk authentication.')}>Sign in</button>
+          <div className="header-actions"><a className="sign-in-link" href="/auth/sign-in">Sign in</a><a className="sign-in-button" href="/auth/sign-up">Get started</a></div>
         </header>
 
         <main id="top">
           <section className="hero-section" aria-labelledby="hero-title">
             <div className="hero-copy">
               <p className="eyebrow"><span className="eyebrow-pulse"></span> Electricity help, without the awkwardness</p>
-              <h1 id="hero-title">Keep the lights on.<br /><em>Share power.</em></h1>
-              <p className="hero-intro">Create a secure topup link for your prepaid meter. Friends, family or a helper can pay in minutes, and your electricity token is delivered straight away.</p>
+              <h1 id="hero-title">Keep the lights on.<br /><em>Powered by helpers.</em></h1>
+              <p className="hero-intro">Top up electricity, bridge an advance, or keep someone connected with a secure request that is easy to share.</p>
               <div className="hero-proof" aria-label="Service highlights">
                 <span><strong>24h</strong> shareable links</span>
                 <span><strong>R</strong> transparent pricing</span>
@@ -200,6 +207,11 @@ export default function HomePage() {
             </div>
 
             <div className="lookup-card" id="lookup-card">
+              <div className="service-tabs" role="tablist" aria-label="topmeup services">
+                {serviceTabs.map((service) => <button key={service.id} className={selectedService === service.id ? 'service-tab is-active' : 'service-tab'} type="button" role="tab" aria-selected={selectedService === service.id} onClick={() => setSelectedService(service.id)}><span>{service.icon}</span>{service.label}</button>)}
+              </div>
+              {selectedService === 'advance' && <div className="service-callout"><strong>Advance</strong> — borrow up to <strong>R100</strong>, repay within <strong>30 days</strong> from your next topup.</div>}
+              {selectedService !== 'topup' && <div className="service-mode-note">This demo keeps the same verified recipient flow while we connect the {selectedService} provider.</div>}
               <div className="card-heading">
                 <div>
                   <p className="section-kicker">Start with your meter</p>
@@ -219,7 +231,7 @@ export default function HomePage() {
                       inputMode="numeric"
                       autoComplete="off"
                       maxLength={11}
-                      placeholder="Enter meter number"
+                      placeholder={serviceTabs.find((service) => service.id === selectedService)?.placeholder}
                       aria-describedby="meter-error"
                       value={meter}
                       onChange={handleMeterChange}
@@ -250,7 +262,7 @@ export default function HomePage() {
                 <div className="share-panel" id="share-panel">
                   <div className="success-heading"><span className="check-icon">✓</span><div><p className="section-kicker">Your link is ready</p><h2>Share a little light</h2></div></div>
                   <p className="share-address">Meter <span id="share-meter">{maskMeter(meter)}</span> · Silverton, Pretoria</p>
-                  <div className="share-link-box"><code id="share-url">{shareUrl}</code><button id="copy-link" type="button" aria-label="Copy link" onClick={handleCopy}>Copy</button></div>
+                  <div className="share-link-box"><a href={`/e/${shareUrl.split('/e/')[1]}`}><code id="share-url">{shareUrl}</code></a><button id="copy-link" type="button" aria-label="Copy link" onClick={handleCopy}>Copy</button></div>
                   <div className="share-actions"><button type="button" onClick={() => handleShare('whatsapp')}>WhatsApp</button><button type="button" onClick={() => handleShare('native')}>Share via</button><button type="button" onClick={() => handleShare('email')}>Email</button></div>
                   <div className="countdown-row"><span>Link expires in</span><strong id="countdown">{countdown}</strong></div>
                   <button className="secondary-action" id="start-over" type="button" onClick={resetFlow}>Create another request</button>
@@ -297,7 +309,7 @@ export default function HomePage() {
           </section>
         </main>
 
-        <footer className="site-footer" id="privacy"><div className="footer-brand"><span className="brand-mark">↗</span><span>topmeup</span></div><p>Keep lights on, stay connected.</p><div className="footer-links"><a href="/about">About</a><a href="/legal#privacy-policy">Privacy</a><a href="/legal#terms-of-service">Terms</a><a href="mailto:hello@topmeup.io">hello@topmeup.io</a></div><div className="social-links" aria-label="Follow TopMeUp"><a href="https://www.facebook.com/topmeup" target="_blank" rel="noreferrer">Facebook</a><a href="https://www.instagram.com/topmeup" target="_blank" rel="noreferrer">Instagram</a><a href="https://x.com/topmeup" target="_blank" rel="noreferrer">X</a><a href="https://www.tiktok.com/@topmeup" target="_blank" rel="noreferrer">TikTok</a></div><small>© 2026 topmeup.io · No ads. Ever.</small></footer>
+        <footer className="site-footer" id="privacy"><div className="footer-brand"><span className="brand-mark">↗</span><span>topmeup</span></div><p>Keep lights on, stay connected.</p><div className="footer-links"><a href="/about">About</a><a href="/legal#privacy-policy">Privacy</a><a href="/legal#terms-of-service">Terms</a><a href="mailto:hello@topmeup.io">hello@topmeup.io</a></div><div className="social-links" aria-label="Follow topmeup"><a href="https://www.facebook.com/topmeup" target="_blank" rel="noreferrer">Facebook</a><a href="https://www.instagram.com/topmeup" target="_blank" rel="noreferrer">Instagram</a><a href="https://x.com/topmeup" target="_blank" rel="noreferrer">X</a><a href="https://www.tiktok.com/@topmeup" target="_blank" rel="noreferrer">TikTok</a></div><small>© 2026 topmeup.io · No ads. Ever.</small></footer>
       </div>
       <div className={`toast ${toast ? 'is-visible' : ''}`} id="toast" role="status" aria-live="polite">{toast}</div>
     </>

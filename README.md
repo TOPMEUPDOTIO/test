@@ -13,7 +13,7 @@ Open [index.html](index.html) in a browser. No build step or environment variabl
 - Verified address and POPIA consent capture state
 - Shareable 24-hour `topmeup.io` request link with copy, WhatsApp, email, and native share actions
 - Contact form that opens a prefilled email to `hello@topmeup.io`
-- About page with the TopMeUp purpose and founder story
+- About page with the topmeup purpose and founder story
 - Legal page with Privacy Policy and Terms of Service
 - Social links for Facebook, Instagram, X, and TikTok
 - South African phone formatting in the `+27 00 000 0000` format

@@ -1,4 +1,4 @@
-# 12 - Applied: $10K Dashboard Blueprint → topmeup.me
+# 12 - Applied: $10K Dashboard Blueprint → topmeup.io
 
 > Applying the Anti-Gravity Vibe Code framework to transform the two sketched dashboards (Customer + Admin) from "data screens" into high-value operational control panels that command $5-10K+.
 
@@ -22,7 +22,7 @@ Original drawings show: `Ads + Meter + Amount R200 + Pay` and `Meter list`. That
 
 **New High-Ticket Positioning:**
 
-For topmeup.me Platform Owners & Investors:
+For topmeup.io Platform Owners & Investors:
 - **Name:** `Energy Access Revenue Intelligence System (EARIS)`
 - **Tagline:** "From prepaid chaos to real-time profit & impact clarity"
 - **Sells:** Revenue visibility on fees, token failure losses, regional profitability
@@ -51,7 +51,7 @@ For CSR / Enterprise Donors (Future Upsell):
 
 ### Step 1 - Define Decision Layer (COO Prompt Applied)
 
-**Prompt used:** *Act as COO of a R5M–R20M prepaid utility fintech (topmeup.me). If you had real-time dashboard, what 8-12 metrics daily? Group by Revenue, Cost, Growth, Risk, Efficiency.*
+**Prompt used:** *Act as COO of a R5M–R20M prepaid utility fintech (topmeup.io). If you had real-time dashboard, what 8-12 metrics daily? Group by Revenue, Cost, Growth, Risk, Efficiency.*
 
 **Output for ADMIN - Revenue Intelligence System:**
 
@@ -161,7 +161,7 @@ For CSR / Enterprise Donors (Future Upsell):
 
 **Customer Impact Dashboard twist:** More warm, less corporate. Use yellow as primary, illustration of bulb hours, empathetic copy. Same looks-expensive rules but welcoming.
 
-## SECTION 5 - 3 High-Ticket Dashboard Angles Mapped to topmeup.me
+## SECTION 5 - 3 High-Ticket Dashboard Angles Mapped to topmeup.io
 
 ### 1. Client Profitability Dashboard (Adapted: Link Profitability)
 For platform operator to know which links/regions/users are unprofitable.
@@ -199,7 +199,7 @@ As detailed above. Solves reactive operation without unified visibility.
 
 Pain: Founder doesn't know if failure spike due to Eskom API or Stripe until donors complain on Twitter.
 
-## SECTION 6 - Turning Dashboard Into $10K Offer (Package for topmeup.me)
+## SECTION 6 - Turning Dashboard Into $10K Offer (Package for topmeup.io)
 
 **Don't sell "admin dashboard" → Sell:**
 
@@ -240,7 +240,7 @@ Pain: Founder doesn't know if failure spike due to Eskom API or Stripe until don
 **Don't pitch generically:**
 
 - Generic: "I build admin dashboards for fintech"
-- High-Ticket: "I help prepaid energy platforms like topmeup.me stop leaking 4-7% revenue to failed tokens and expired links - I built a Revenue Intelligence System that shows failure rate, fee leakage, and regional profit in one screen, saves R8k/mo in refunds. We uncovered R47k extra revenue in 7 days for similar platform. Want me to audit your Stripe + CitiQ logs?"
+- High-Ticket: "I help prepaid energy platforms like topmeup.io stop leaking 4-7% revenue to failed tokens and expired links - I built a Revenue Intelligence System that shows failure rate, fee leakage, and regional profit in one screen, saves R8k/mo in refunds. We uncovered R47k extra revenue in 7 days for similar platform. Want me to audit your Stripe + CitiQ logs?"
 
 **Lead Magnet:**
 - Offer free "Energy Donation Funnel Audit" - Analyze their last 100 links, show fulfillment rate vs benchmark 34%, show expired value.
@@ -256,6 +256,6 @@ Pain: Founder doesn't know if failure spike due to Eskom API or Stripe until don
 
 - `dashboards/AdminCommandCenter.dc.html` - $10K Executive Snapshot (Revenue Intelligence System)
 - `dashboards/CustomerImpactCenter.dc.html` - Welcoming Household Impact Center (trust + retention)
-- This doc mapping blueprint to topmeup.me
+- This doc mapping blueprint to topmeup.io
 
 Both DCs follow vibe coding workflow: layout → interactivity → filters → polish, dark/light, mobile responsive, modular, performance optimized, no unnecessary libs.
