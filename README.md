@@ -19,13 +19,19 @@ Open [index.html](index.html) in a browser. No build step or environment variabl
 - South African phone formatting in the `+27 00 000 0000` format
 - Service selector and supporting trust/how-it-works sections
 - No advertising scripts or tracking calls
+- Server-backed scrypt authentication with signed HTTP-only sessions
+- Durable JSON persistence for local and single-instance deployments
+- Paystack initialization and signed webhook endpoints
+- RAVASVend SOAP meter lookup and vending adapter
+- Authorized expiry-job endpoint
 
 ## Implementation plan status
 
 - Complete: responsive landing page and reference states for meter entry, verification, link creation, sharing, contact, trust, and expiry countdown
 - Complete: server-owned request creation through `/api/requests`
 - Complete: About, Legal, and social navigation routes
-- Pending: replace mock meter verification with the utility API
-- Pending: add Clerk authentication, Stripe payment collection, token issuance, notifications, and durable storage
+- Complete: authentication, Paystack checkout boundary, RAVASVend adapter, durable local persistence, and expiry-job boundary
+- Pending: confirm the exact RAVASVend operation/namespace fields from the vendor PDF and configure production credentials
+- Pending: deploy a shared database/worker, configure WhatsApp/email providers, and run production UAT
 
-The external integrations (Clerk, Convex, Stripe, utility APIs, Resend, and OpenWA) are intentionally not faked in this slice.
+The provider adapters are environment-backed. The RAVASVend specification PDF was not available in the repository, so operation names default to `MeterLookup` and `Vend` and can be overridden with environment variables. The JSON store is a deployment-safe local fallback, not a replacement for Postgres in a multi-instance deployment.

@@ -8,9 +8,12 @@ export default function AuthForm({ mode = 'signin' }) {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    window.localStorage.setItem('topmeupUser', JSON.stringify({ name: name || 'topmeup member', email }));
+    setMessage('');
+    const response = await fetch('/api/auth', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ action: isSignUp ? 'signup' : 'signin', name, email, password: event.currentTarget.password.value }) });
+    const payload = await response.json();
+    if (!response.ok) { setMessage(payload.error || 'Authentication failed.'); return; }
     window.location.href = '/dashboard';
   };
 
@@ -26,7 +29,7 @@ export default function AuthForm({ mode = 'signin' }) {
           <label className="field-label" htmlFor="auth-email">Email address</label>
           <input id="auth-email" type="email" required value={email} onChange={(event) => setEmail(event.target.value)} placeholder="you@example.com" />
           <label className="field-label" htmlFor="auth-password">Password</label>
-          <input id="auth-password" type="password" required minLength={6} placeholder="At least 6 characters" />
+          <input id="auth-password" name="password" type="password" required minLength={6} placeholder="At least 6 characters" />
           {isSignUp && <label className="consent-row"><input type="checkbox" required /><span>I agree to the topmeup terms and POPIA privacy policy.</span></label>}
           <button className="primary-action" type="submit">{isSignUp ? 'Create account' : 'Sign in'} <span>↗</span></button>
         </form>

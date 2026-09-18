@@ -12,7 +12,7 @@ Tasks:
 - [ ] Docker Compose local: postgres, redis, mailhog
 - [ ] CI GitHub Actions: lint, test, build
 - [ ] Design tokens: colors, typography, shadcn setup, logo, favicon, trust badges (SSL, POPIA, Stripe)
-- [ ] Auth implementation: JWT httpOnly cookies, signup/signin, OTP stub, POPIA consent table
+- [x] Auth implementation: signed httpOnly session cookies, signup/signin, password hashing
 - [ ] Prisma initial schema + migration
 - [ ] Sentry + PostHog + Cloudflare Turnstile keys
 - [ ] Short code generator util (nanoid customAlphabet)
@@ -22,7 +22,7 @@ Deliverable: /auth/me works, landing static renders.
 ## Phase 1 - Meter Lookup & Request Creation (Week 2-3)
 
 **Backend:**
-- [ ] Electricity API Adapter: implement interface, mock provider + real sandbox, circuit breaker
+- [x] Electricity API Adapter: configurable RAVASVend SOAP adapter for lookup and vending
 - [ ] POST /meters/lookup with rate limit, CAPTCHA, cache 10 min in Redis (meterHash -> address)
 - [ ] POST /requests + short link generation, expiry job (BullMQ cron every minute)
 - [ ] GET /s/:code public resolver (Redis fast path)
@@ -42,8 +42,8 @@ QA:
 ## Phase 2 - Checkout & Stripe (Week 4-5)
 
 **Backend:**
-- [ ] POST /donations/checkout-session: validate short code active, validate amount min/max, create Fulfillment PENDING_PAYMENT, create Stripe Checkout Session
-- [ ] Stripe webhook endpoint with signature verification, idempotency via StripeEvent table
+- [x] Paystack checkout initialization with server-side secret
+- [x] Paystack webhook endpoint with HMAC signature verification and RAVASVend vending hook
 - [ ] Background worker: on payment succeeded -> call electricity API purchase
 - [ ] Encryption helpers for token (AES-256-GCM with Vault key)
 - [ ] Receipt PDF generator (PDFKit or Puppeteer) -> S3 upload + signed URL

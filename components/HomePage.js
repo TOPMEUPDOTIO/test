@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import AdvanceFlow from './AdvanceFlow';
 
 const makeCode = () => {
   const alphabet = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
@@ -44,11 +45,7 @@ export default function HomePage() {
   ];
 
   useEffect(() => {
-    try {
-      setSignedInUser(JSON.parse(window.localStorage.getItem('topmeupUser') || 'null'));
-    } catch {
-      setSignedInUser(null);
-    }
+    fetch('/api/auth').then((response) => response.ok ? response.json() : { user: null }).then((payload) => setSignedInUser(payload.user));
   }, []);
 
   const showToast = (message) => {
@@ -253,7 +250,9 @@ export default function HomePage() {
                 </form>
               )}
 
-              {verified && (
+              {selectedService === 'advance' && verified && <AdvanceFlow meter={meter} user={signedInUser} />}
+
+              {verified && selectedService !== 'advance' && (
                 <div className="verified-panel" id="verified-panel">
                   <div className="verified-title"><span className="check-icon">✓</span><span>Meter verified</span></div>
                   <p className="verified-address">00 Southwest Street<br /><strong>Silverton, Pretoria 0184</strong></p>

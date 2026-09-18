@@ -1,4 +1,5 @@
 import { createRequest, getRequest, getRequestByCode, issueToken, listRequests, markPayment } from '../../../lib/serverStore';
+import { userFromRequest } from '../../../lib/auth';
 
 export async function GET(request) {
   const code = new URL(request.url).searchParams.get('code');
@@ -31,13 +32,14 @@ export async function POST(request) {
       return Response.json({ error: 'Provide a valid email or mobile number.' }, { status: 400 });
     }
 
+    const sessionUser = userFromRequest(request);
     const record = createRequest({
       meter: String(body.meter),
       email: body?.email || null,
       phone: body?.phone || null,
       consent: Boolean(body.consent),
       code: String(body.code || 'UNSET'),
-      user: body?.user || null,
+      user: sessionUser || body?.user || null,
     });
 
     return Response.json({ success: true, request: record }, { status: 201 });
