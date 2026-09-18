@@ -80,6 +80,8 @@ h2 { margin-bottom: 0; font-size: 31px; line-height: 1.05; }
 .contact-fields .field-label { margin-bottom: 1px; }
 .contact-fields input { width: 100%; padding: 12px 13px; border: 1px solid #ccd8d4; border-radius: 8px; outline: 0; color: var(--blue); background: #fcfdfa; }
 .contact-fields input:focus { border-color: var(--blue); }
+.signed-in-delivery { display: grid; gap: 6px; margin: 17px 0 0; padding: 15px; border-radius: 10px; color: var(--blue); background: var(--mint); font-size: 13px; line-height: 1.45; }
+.signed-in-delivery span { color: var(--ink-soft); font-size: 12px; }
 .consent-row { display: flex; gap: 9px; margin: 18px 0; color: var(--ink-soft); font-size: 12px; line-height: 1.45; }
 .consent-row input { width: 16px; height: 16px; flex: 0 0 auto; accent-color: var(--blue); }
 .consent-row a { color: var(--blue); font-weight: 700; }
@@ -192,6 +194,15 @@ h2 { margin-bottom: 0; font-size: 31px; line-height: 1.05; }
 .token-box { display: grid; gap: 8px; margin: 25px 0; padding: 20px; border-radius: 12px; color: var(--blue); background: var(--yellow-soft); }
 .token-box small, .token-box span { color: var(--ink-soft); }
 .token-box strong { font-family: var(--display); font-size: 22px; letter-spacing: 2px; }
+.receipt-card { display: grid; gap: 7px; margin: 22px 0; padding: 17px; border: 1px solid var(--line); border-radius: 10px; text-align: left; color: var(--ink-soft); background: #fbfcf8; font-size: 12px; line-height: 1.45; overflow-wrap: anywhere; }
+.receipt-card strong { color: var(--blue); font-family: var(--display); font-size: 15px; }
+.transaction-list { display: grid; gap: 0; margin: 24px 0; border-top: 1px solid var(--line); }
+.transaction-row { display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; padding: 15px 0; border-bottom: 1px solid var(--line); }
+.transaction-row strong { color: var(--blue); font-family: var(--display); }
+.transaction-row span, .transaction-row small { color: var(--ink-soft); font-size: 12px; }
+.transaction-row span { text-align: right; }
+.transaction-row small { grid-column: 1 / -1; }
+.empty-transaction { padding: 16px 0; color: var(--ink-soft); font-size: 13px; }
 .dashboard-page { padding-bottom: 80px; }
 .dashboard-header { width: min(1160px, calc(100% - 48px)); height: 88px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
 .dashboard-user { display: flex; align-items: center; gap: 18px; color: var(--ink-soft); font-size: 13px; }

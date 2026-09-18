@@ -35,7 +35,7 @@ export default function DonorCheckout({ code }) {
 
   if (status === 'loading') return <main className="checkout-page"><div className="checkout-card"><p className="section-kicker">Secure checkout</p><h1>Loading request...</h1></div></main>;
   if (status === 'error') return <main className="checkout-page"><div className="checkout-card"><p className="section-kicker">Request unavailable</p><h1>This link is no longer active.</h1><p>{error}</p><a className="secondary-action" href="/">Create a request</a></div></main>;
-  if (status === 'success') return <main className="checkout-page"><div className="checkout-card success-checkout"><span className="check-icon">✓</span><p className="section-kicker">Donation complete</p><h1>Power is on its way.</h1><p>Your demo donation of <strong>R{amount}</strong> generated a prepaid voucher for meter {request.meter.slice(0, 3)}***{request.meter.slice(-4)}.</p><div className="token-box"><small>Voucher token</small><strong>{fulfillment.token}</strong><span>{fulfillment.units} estimated units</span></div><button className="secondary-action" type="button" onClick={() => navigator.clipboard?.writeText(fulfillment.token)}>Copy voucher token</button><a className="back-link" href="/">Back to topmeup</a></div></main>;
+  if (status === 'success') return <main className="checkout-page"><div className="checkout-card success-checkout"><span className="check-icon">✓</span><p className="section-kicker">TRANSACTION COMPLETE</p><h1>Power is on its way.</h1><p>Your topup of <strong>R{amount.toFixed(2)}</strong> generated a prepaid voucher for meter {request.meter.slice(0, 3)}***{request.meter.slice(-4)}.</p><div className="token-box"><small>Electricity token</small><strong>{fulfillment.token}</strong><span>{fulfillment.units.toFixed(2)} kWh</span></div><div className="receipt-card"><strong>topmeup receipt</strong><span>Receipt: {fulfillment.receiptNumber}</span><span>Amount: R{fulfillment.amount.toFixed(2)}</span><span>VAT: R{fulfillment.vat.toFixed(2)}</span><span>Service fee: R{fulfillment.serviceFee.toFixed(2)}</span><span>Electricity: R{fulfillment.electricityAmount.toFixed(2)}</span><span>SMS delivery: {fulfillment.sms.message}</span></div><button className="secondary-action" type="button" onClick={() => navigator.clipboard?.writeText(fulfillment.token)}>Copy electricity token</button><a className="back-link" href="/">Back to topmeup</a></div></main>;
 
   return (
     <main className="checkout-page">
@@ -43,7 +43,7 @@ export default function DonorCheckout({ code }) {
         <header className="content-header"><a className="brand" href="/"><span className="brand-mark">↗</span><span>topmeup</span></a><a className="back-link" href="/">Cancel</a></header>
         <div className="checkout-grid">
           <section className="checkout-card">
-            <p className="section-kicker">Donate electricity to</p>
+            <p className="section-kicker">Send electricity to</p>
             <h1>Help keep the lights on.</h1>
             <div className="recipient-card"><strong>Meter {request.meter.slice(0, 3)}***{request.meter.slice(-4)}</strong><span>00 Southwest Street, Silverton</span><small>Request link expires in 23:59:12</small></div>
             <form className="checkout-form" onSubmit={handlePay}>
@@ -56,7 +56,7 @@ export default function DonorCheckout({ code }) {
               <small className="form-note">Demo checkout only. No real payment is collected.</small>
             </form>
           </section>
-          <aside className="checkout-trust"><p className="section-kicker">Built for trust</p><h2>Your help reaches a real request.</h2><p>TopmeUp masks personal details and keeps each request link active for 24 hours.</p><div className="trust-stat"><strong>{request.fulfillments?.length || 0}</strong><span>helpers have contributed</span></div><div className="trust-stat"><strong>POPIA</strong><span>privacy-minded by design</span></div></aside>
+            <aside className="checkout-trust"><p className="section-kicker">Topups for this temporary URL</p><h2>Every topup, clearly recorded.</h2><p>Meter {request.meter.slice(0, 3)}***{request.meter.slice(-4)} · Silverton, Pretoria</p><div className="transaction-list">{(request.transactions || request.fulfillments || []).length === 0 ? <p className="empty-transaction">No topups yet. Be the first to send one.</p> : (request.transactions || request.fulfillments).map((transaction) => <div className="transaction-row" key={transaction.id}><strong>R{transaction.amount.toFixed(2)}</strong><span>{new Date(transaction.createdAt).toLocaleDateString()} {new Date(transaction.createdAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span><small>Meter {request.meter.slice(0, 3)}***{request.meter.slice(-4)}</small></div>)}</div><div className="trust-stat"><strong>POPIA</strong><span>privacy-minded by design</span></div></aside>
         </div>
       </div>
     </main>

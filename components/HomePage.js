@@ -34,6 +34,7 @@ export default function HomePage() {
   const [countdown, setCountdown] = useState('23:59:59');
   const [toast, setToast] = useState('');
   const [contact, setContact] = useState({ name: '', email: '', message: '' });
+  const [signedInUser, setSignedInUser] = useState(null);
   const [selectedService, setSelectedService] = useState('topup');
   const serviceTabs = [
     { id: 'topup', label: 'Topup', icon: '⚡', placeholder: 'Enter meter number' },
@@ -41,6 +42,14 @@ export default function HomePage() {
     { id: 'airtime', label: 'Airtime', icon: '◌', placeholder: 'Enter mobile number' },
     { id: 'data', label: 'Data', icon: '◒', placeholder: 'Enter mobile number' },
   ];
+
+  useEffect(() => {
+    try {
+      setSignedInUser(JSON.parse(window.localStorage.getItem('topmeupUser') || 'null'));
+    } catch {
+      setSignedInUser(null);
+    }
+  }, []);
 
   const showToast = (message) => {
     setToast(message);
@@ -87,8 +96,10 @@ export default function HomePage() {
   };
 
   const handleCreateLink = async () => {
-    const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
-    const phoneValid = /^\d{9}$/.test(normalizePhone(phone));
+    const deliveryEmail = signedInUser?.email || email;
+    const deliveryPhone = signedInUser?.phone || phone;
+    const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(deliveryEmail.trim());
+    const phoneValid = /^\d{9}$/.test(normalizePhone(deliveryPhone));
 
     if (!emailValid && !phoneValid) {
       showToast('Add an email address or a mobile number so we can deliver your link.');
@@ -111,7 +122,7 @@ export default function HomePage() {
       const response = await fetch('/api/requests', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ meter, email, phone, consent, code }),
+        body: JSON.stringify({ meter, email: deliveryEmail, phone: deliveryPhone, consent, code, user: signedInUser }),
       });
 
       if (!response.ok) {
@@ -246,12 +257,12 @@ export default function HomePage() {
                 <div className="verified-panel" id="verified-panel">
                   <div className="verified-title"><span className="check-icon">✓</span><span>Meter verified</span></div>
                   <p className="verified-address">00 Southwest Street<br /><strong>Silverton, Pretoria 0184</strong></p>
-                  <div className="address-note"><span>⌖</span> Address confirmed by our electricity partner</div>
-                  <div className="contact-fields">
+                  <div className="address-note"><span>⌖</span> Address confirmed by Eskom</div>
+                  {signedInUser ? <div className="signed-in-delivery"><strong>We will send your link and transaction details to {signedInUser.email}.</strong><span>Signed in as {signedInUser.name || 'topmeup member'}</span></div> : <div className="contact-fields">
                     <label className="field-label" htmlFor="email">Where should we send your link?</label>
                     <input id="email" type="email" placeholder="Email address" autoComplete="email" value={email} onChange={(event) => setEmail(event.target.value)} />
                     <input id="phone" type="tel" placeholder="+27 00 000 0000" autoComplete="tel" value={phone} onChange={(event) => setPhone(formatPhone(event.target.value))} />
-                  </div>
+                  </div>}
                   <label className="consent-row"><input id="consent" type="checkbox" checked={consent} onChange={(event) => setConsent(event.target.checked)} /><span>I agree to the <a href="#privacy">POPIA privacy terms</a> so topmeup can create and deliver my request.</span></label>
                   <button className="primary-action" id="create-link" type="button" onClick={handleCreateLink}>Create my shareable link <span>↗</span></button>
                   <p className="form-note">No card details needed to create a request.</p>

@@ -37,6 +37,7 @@ export async function POST(request) {
       phone: body?.phone || null,
       consent: Boolean(body.consent),
       code: String(body.code || 'UNSET'),
+      user: body?.user || null,
     });
 
     return Response.json({ success: true, request: record }, { status: 201 });
